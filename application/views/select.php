@@ -1,7 +1,7 @@
 <?php 
 $arrayUsers=$params['arrayUsers'];
 ?>
-<a href="?action=insert">agregar</a>
+<a href="?controller=users&action=insert">agregar</a>
 <table border=1>
 	<tr>
 		<th>id</th><th>name</th><th>email</th><th>password</th>
