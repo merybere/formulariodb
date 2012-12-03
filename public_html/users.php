@@ -1,4 +1,19 @@
 <?php 
+/**
+ * Usersontroller.php is the users controller
+ *
+ * This module implement CRUD over users table.
+ *
+ * @author     Agustín Calderón <agustincl@gmail.com>
+ * @copyright  Copyright 2012 Elemental. All Rights Reserved.
+ * @license    http://creativecommons.org/licenses/by-nc-nd/3.0/es/CC-NC-ND
+ * @category   PHP & MySQL Training
+ * @package    Users
+ * @subpackage file
+ * @version    GIT $Id:$
+ *
+*/
+
 
 define ('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 
