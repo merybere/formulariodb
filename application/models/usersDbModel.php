@@ -55,7 +55,10 @@ function readUserLanguages($id, $cnx)
 
 function readUser($id, $cnx)
 {
-	return $arrayUser;
+	$sql="SELECT * FROM users WHERE iduser=".$id;
+	$arrayUser=query($sql, $cnx);
+	
+	return $arrayUser[0];
 }
 
 function insertUser($arrayData, $cnx, $imageName)

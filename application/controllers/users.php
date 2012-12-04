@@ -18,12 +18,9 @@
 $arrayUser=initArrayUser();
 
 
-if(isset($_GET['action']))
-	$action=$_GET['action'];
-else
-	$action='select';
 
-switch($action)
+
+switch($arrayRequest['action'])
 {
 	case 'update':
 // 		die("esto es update");

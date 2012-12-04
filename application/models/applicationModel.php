@@ -95,6 +95,35 @@ function setRequest()
 
 
 
+function acl($arrayRequest, $rol, $cnx)
+{	
+	$sql="SELECT resource 
+			FROM resources
+			LEFT JOIN roles_has_resources 
+			ON resources.idresource=roles_has_resources.resources_idresource
+			WHERE roles_has_resources.roles_idrol=".$rol;
+	$resources=query($sql, $cnx);
+	foreach ($resources as $resource)
+	{
+		$arrayResources[]=$resource['resource'];
+	}
+ 
+	if(in_array("/".$arrayRequest['controller']."/".$arrayRequest['action'], $arrayResources))
+		$arrayRequest=$arrayRequest;
+	elseif(in_array("/".$arrayRequest['controller'], $arrayResources))
+		$arrayRequest=$arrayRequest;
+	else
+	{
+		$arrayRequest['controller']='error';
+		$arrayRequest['action']='403';
+	}
+		
+	return $arrayRequest;
+}
+
+
+
+
 
 
 

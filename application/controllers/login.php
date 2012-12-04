@@ -1,7 +1,7 @@
 <?php 
 include_once(APPLICATION_PATH."/models/loginModel.php");
 
-switch($_GET['action'])
+switch($arrayRequest['action'])
 {	
 	case 'index':
 	case 'login':	
@@ -24,8 +24,8 @@ switch($_GET['action'])
 	break; 
 }
 
-
-echo renderLayout($config, 'layout_login', array());
+$params=array('content'=>$content);
+echo renderLayout($config, 'layout_login', $params);
 
 
 

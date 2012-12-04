@@ -1,6 +1,6 @@
 <?php 
 
-switch($_GET['action'])
+switch($arrayRequest['action'])
 {	
 	case 'index':	
 		$content=renderView($config, 'index/index', array());

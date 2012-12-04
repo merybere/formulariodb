@@ -47,7 +47,7 @@
 		<!-- Content (Right Column) -->
 		<div id="content" class="box">
 			<?php //include("../application/layouts/partials/content.php");?>
-			<?=$content;?>
+			<?=$params['content'];?>
 		</div> 
 		<!-- /content -->
 
