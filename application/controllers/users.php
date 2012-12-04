@@ -71,7 +71,7 @@ switch($action)
 					);
 			
 			
-			$content=renderView($config, 'formulario', $params);
+			$content=renderView($config, 'users/formulario', $params);
 		}
 			
 	break;
@@ -93,19 +93,21 @@ switch($action)
 		}
 		else
 		{
-			$content=renderView($config, 'delete', array());
+			$content=renderView($config, 'users/delete', array());
 		}
 	break;
+	case 'index':
 	case 'select':		
 		$arrayUsers=readUsers($cnx);
 		$params=array('arrayUsers'=>$arrayUsers);
-		$content=renderView($config, 'select', $params);
+		$content=renderView($config, 'users/select', $params);
 	default:
 	break; 
 }
 
-
-include("../application/layouts/layout_admin1.php");
+$params=array('userName'=>'Agustin',
+				'content'=>$content);
+echo renderLayout($config, 'layout_admin1', $params);
 
 
 

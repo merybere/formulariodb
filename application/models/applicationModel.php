@@ -49,6 +49,50 @@ function renderView($config, $view, array $params)
 	return $content;
 }
 
+function renderLayout($config, $layout, array $params)
+{
+
+	ob_start();
+	include($config['layoutDirectory']."/".$layout.".php");
+	$content=ob_get_contents();
+	ob_end_clean();
+	return $content;
+}
+
+
+function setRequest()
+{
+	$uri=(explode('/',$_SERVER['REQUEST_URI']));
+	
+	if($uri[1]!='')
+	if(file_exists(APPLICATION_PATH."/controllers/".$uri[1].".php"))
+	{
+		if(isset($uri[1]))
+			$_GET['controller']=$uri[1];
+		else
+			$_GET['controller']='index';
+		if(isset($uri[2]))
+			$_GET['action']=$uri[2];
+		else
+			$_GET['action']='index';
+	}
+	else
+	{
+		$_GET['controller']='error';
+		$_GET['action']='404';
+	}
+	else
+	{
+		$_GET['controller']='index';
+		$_GET['action']='index';
+	}
+		
+	$arrayRequest=array('controller'=>$_GET['controller'],
+						'action'=>$_GET['action']);
+	
+	return $arrayRequest;
+}
+
 
 
 

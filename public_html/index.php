@@ -8,8 +8,7 @@ defined('APPLICATION_PATH')?:
 	
 defined('DOCUMENT_ROOT')?:
 	define('DOCUMENT_ROOT',$_SERVER['DOCUMENT_ROOT']);
-
-
+	
 require_once(APPLICATION_PATH."/models/applicationModel.php");
 require_once(APPLICATION_PATH."/models/usersModel.php");
 require_once(APPLICATION_PATH."/models/mysqlModel.php");

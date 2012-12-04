@@ -1,4 +1,3 @@
-
 <p class="f-left box">
 
 <!-- Switcher -->
@@ -11,4 +10,7 @@
 
 		</p>
 
-		<p class="f-right">User: <strong><a href="#">Administrator</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a href="#" id="logout">Log out</a></strong></p>
+		<p class="f-right">User: 
+		<strong><a href="#"><?=$params['userName'];?></a></strong> 
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<strong><a href="/login/logout" id="logout">Log out</a></strong></p>
